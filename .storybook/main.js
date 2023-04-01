@@ -5,9 +5,11 @@ module.exports = {
   typescript: {
     check: false, // type-check stories during Storybook build
   },
-  webpackFinal: async (config, {configType}) => {
-    const tsConfigIndex = config.plugins.findIndex(v => v.constructor.name === "ForkTsCheckerWebpackPlugin")
-    config.plugins.splice(tsConfigIndex, 1); 
-    return config; 
-  }
+  webpackFinal: async (config, { configType }) => {
+    const tsConfigIndex = config.plugins.findIndex(
+      (v) => v.constructor.name === 'ForkTsCheckerWebpackPlugin'
+    );
+    config.plugins.splice(tsConfigIndex, 1);
+    return config;
+  },
 };
